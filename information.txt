@@ -1,0 +1,34 @@
+Kotlin (official Android language)
+├── Room Database (local storage - no cloud needed)
+├── UsageStatsManager (for app monitoring)
+├── WorkManager (for background tasks)
+├── AlarmManager (for blocking/reset schedules)
+└── Material Design (for UI)
+
+DATA FLOW :
+User creates account → Local only (no server)
+Set goals/app limits → Stored in Room DB
+App usage tracked → UsageStatsManager
+Limit exceeded → Blocking service triggered
+Daily reset → Automatic at midnight
+Inbuilt alaram
+
+PRIJECT STRUCTURE :
+
+app/
+├── data/
+│   ├── entity/ (User, Goal, AppLimit, DailyQuest)
+│   ├── dao/ (Database access)
+│   └── repository/ (Business logic)
+├── service/
+│   ├── AppMonitorService.kt
+│   ├── BlockingService.kt
+│   └── ResetScheduler.kt
+├── ui/
+│   ├── auth/ (Login/Create Account)
+│   ├── main/ (Dashboard)
+│   ├── goals/ (Goal management)
+│   ├── apps/ (App control)
+│   └── quests/ (Daily checklist)
+└── utils/
+    └── TimeValidator.kt

@@ -1,4 +1,4 @@
-@entity
+@Entity
 data class user
 (
     @PrimaryKey userId : String,

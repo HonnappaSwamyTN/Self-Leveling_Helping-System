@@ -1,3 +1,4 @@
+@Entity 
 data class goals
 (
     @primarykey val goalId : String,
@@ -7,5 +8,5 @@ data class goals
     val noOfDaysequired : int,
     val createdAt : int,
     val completedAt : String,
-    val completed : boolean = true,
+    val completed : boolean = true
 )
